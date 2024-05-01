@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply scroll-smooth;
+}
+
 body {
-  @apply bg-blue-100 text-slate-900;
+  @apply bg-darkBlue text-white;
+}
+
+@layer components {
+  .c-container {
+    @apply mx-auto max-w-[1440px] px-6 md:w-[90%] md:px-0;
+  }
+  .headerLink {
+    @apply text-white opacity-70 transition-opacity hover:opacity-100;
+  }
 }

@@ -12,6 +12,12 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
       },
+      colors: {
+        darkBlue: '#090909',
+        lightBlue: '#5C6CFF',
+        lightRed: '#FF5C5C',
+        primary: '#FFC25C',
+      },
     },
   },
   plugins: [],
