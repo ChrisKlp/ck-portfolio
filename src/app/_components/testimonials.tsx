@@ -12,7 +12,7 @@ const data = [
 
 export default function Testimonials() {
   return (
-    <section className="c-container">
+    <section className="c-container py-8">
       {data.map((t) => (
         <Testimonial key={t.content} {...t} />
       ))}

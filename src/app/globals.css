@@ -17,4 +17,8 @@ body {
   .headerLink {
     @apply text-white opacity-70 transition-opacity hover:opacity-100;
   }
+
+  .section-headline {
+    @apply text-center font-bold uppercase tracking-[10px] text-primary;
+  }
 }

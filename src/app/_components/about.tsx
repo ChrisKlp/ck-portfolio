@@ -1,4 +1,5 @@
 import React from 'react'
+import SectionHeader from './section-header'
 
 const skills = [
   'Javascript',
@@ -17,15 +18,13 @@ const skills = [
 
 export default function About() {
   return (
-    <section className="c-container grid justify-items-center gap-6 py-8">
-      <h2 className="text-md font-bold uppercase tracking-[10px] text-primary">
-        About
-      </h2>
-      <p className="text-center opacity-70">
-        For over decade, I have been involved in designing and deploying web, as
+    <section className="c-container py-8">
+      <SectionHeader
+        title="About"
+        description="For over decade, I have been involved in designing and deploying web, as
         well as creating website designs. Recently, I have inspiration in VOD
-        apps.
-      </p>
+        apps."
+      />
       <div className="grid w-full grid-cols-2 justify-items-center gap-4">
         {skills.map((skill) => (
           <p key={skill} className="text-xl font-bold">
