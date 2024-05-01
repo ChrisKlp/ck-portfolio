@@ -14,7 +14,7 @@ export default function Hero() {
         </p>
         <Link
           href="#contact-section"
-          className="mt-10 rounded-full bg-primary p-3 px-8 font-bold text-black"
+          className="mt-10 rounded-full bg-primary p-3 px-8 font-bold text-black transition-colors hover:bg-primary-highlighted"
         >
           Contact me
         </Link>

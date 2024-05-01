@@ -15,8 +15,15 @@ const config: Config = {
       colors: {
         darkBlue: '#090909',
         lightBlue: '#5C6CFF',
-        lightRed: '#FF5C5C',
-        primary: '#FFC25C',
+        primary: {
+          DEFAULT: '#FFC25C',
+          highlighted: '#FFCF80',
+        },
+        secondary: {
+          DEFAULT: '#F25B5C',
+          light: '#FF7E7E',
+          dark: '#D03F40',
+        },
       },
     },
   },
