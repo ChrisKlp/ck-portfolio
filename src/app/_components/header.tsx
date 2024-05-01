@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <header className="c-container grid grid-cols-[1fr_auto] items-center gap-5 py-6 md:grid-cols-[1fr_repeat(3,auto)] ">
+    <header className="c-container grid max-w-[1440px] grid-cols-[1fr_auto] items-center gap-5 py-6 md:grid-cols-[1fr_repeat(3,auto)] ">
       <Image
         src={logo as string}
         alt="logo"

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function LogosSeparator() {
   return (
-    <div className="c-container flex justify-center opacity-75">
+    <div className="c-container flex justify-center py-10 opacity-75">
       <Image
         src={logos as string}
         alt="logos"
