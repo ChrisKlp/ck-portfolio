@@ -7,14 +7,16 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <header className="c-container grid max-w-[1440px] grid-cols-[1fr_auto] items-center gap-5 py-6 md:grid-cols-[1fr_repeat(3,auto)] ">
-      <Image
-        src={logo as string}
-        alt="logo"
-        width={60}
-        height={60}
-        className="h-auto w-14 min-w-10"
-      />
+    <header className="c-container grid max-w-[1440px] grid-cols-[1fr_auto] items-center gap-5 py-6 md:grid-cols-[1fr_repeat(3,auto)] lg:gap-8">
+      <Link href="/" replace={true}>
+        <Image
+          src={logo as string}
+          alt="logo"
+          width={60}
+          height={60}
+          className="h-auto w-14 min-w-10"
+        />
+      </Link>
       <Link
         href="https://github.com/ChrisKlp"
         passHref={true}

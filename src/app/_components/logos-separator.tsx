@@ -9,7 +9,7 @@ export default function LogosSeparator() {
         alt="logos"
         width={523}
         height={66}
-        className="w-[350px]"
+        className="[width:_clamp(350px,50vw,523px)]"
       />
     </div>
   )

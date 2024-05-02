@@ -37,7 +37,7 @@ type Project = {
 export default function Projects() {
   const newData = [...Array(6).keys()].map(() => ({ ...data[0] }))
   return (
-    <section className="c-container grid gap-8 py-8 md:grid-cols-2">
+    <section className="c-container grid max-w-[960px] gap-8 py-8 md:grid-cols-2 lg:gap-16">
       {newData.map((p, i) => (
         <Project key={`${p.name}-${i}`} {...p} />
       ))}
@@ -48,7 +48,7 @@ export default function Projects() {
 function Project({ name, shortDescription, imageSrc, tools, links }: Project) {
   return (
     <article className="grid gap-4 rounded-xl bg-white/10 p-4 pb-6">
-      <div className="relative h-[220px] overflow-hidden rounded-lg">
+      <div className="relative h-[220px] overflow-hidden rounded-lg lg:h-[280px]">
         <Image
           src={imageSrc}
           alt={name}
@@ -58,16 +58,18 @@ function Project({ name, shortDescription, imageSrc, tools, links }: Project) {
         />
       </div>
       <header>
-        <p className="text-sm uppercase opacity-60">{shortDescription}</p>
+        <p className="text-sm uppercase opacity-60 lg:my-1">
+          {shortDescription}
+        </p>
         <h3 className="text-xl font-semibold">{name}</h3>
       </header>
       <div className="grid gap-6">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 lg:mb-6">
           {tools.map((tool) => (
             <Tool key={tool} name={tool} />
           ))}
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 lg:gap-3">
           {Object.entries(links).map(([name, value]) => (
             <Button key={name} href={value}>
               {name}
@@ -97,7 +99,7 @@ function Button({ href, children }: { href: string; children: string }) {
       href={href}
       passHref={true}
       className={cn(
-        'flex items-center justify-between rounded-full p-1 px-3 text-xs font-semibold capitalize text-black transition-colors',
+        'flex items-center justify-between rounded-full p-1 px-3 text-xs font-semibold capitalize text-black transition-colors lg:p-2 lg:px-4',
         color,
       )}
     >
