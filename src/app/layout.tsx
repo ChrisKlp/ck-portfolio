@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import './globals.css'
 import Header from './_components/header'
 import Footer from './_components/footer'
-import { cn } from '@/lib/utils'
+import meta from '@/data/meta.json'
+import './globals.css'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -12,9 +12,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Christopher Klepadlo - Frontend Developer',
-  description:
-    'Personal website of Christopher Klepadlo. Frontend Developer. Roku/BrightScript Developer.',
+  title: meta.title,
+  description: meta.description,
   icons: [{ rel: 'icon', url: '/favicon.png' }],
 }
 

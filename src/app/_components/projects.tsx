@@ -2,43 +2,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import LinkIcon from '@/assets/link.svg'
 import { cn } from '@/lib/utils'
-
-const data: Project[] = [
-  {
-    name: 'BeFit - Diet and fitness tracker',
-    shortDescription: 'frontend/backend',
-    imageSrc: '/assets/preview.jpg',
-    tools: [
-      'React',
-      'Vite',
-      'ChakraUI',
-      'Redux',
-      'Node.js',
-      'Express',
-      'JWT',
-      'MongoDB',
-    ],
-    links: {
-      frontend: 'https://github.com/ChrisKlp/beFit-frontend',
-      backend: 'https://github.com/ChrisKlp/beFit-backend',
-      live: 'https://be-fit-frontend.vercel.app/',
-    },
-  },
-]
+import data from '@/data/projects.json'
 
 type Project = {
   name: string
   shortDescription: string
   imageSrc: string
   tools: string[]
-  links: Record<string, string>
+  links: Record<string, string | undefined>
 }
 
 export default function Projects() {
-  const newData = [...Array(6).keys()].map(() => ({ ...data[0] }))
   return (
     <section className="c-container grid max-w-[960px] gap-8 py-8 md:grid-cols-2 lg:gap-16">
-      {newData.map((p, i) => (
+      {data.map((p, i) => (
         <Project key={`${p.name}-${i}`} {...p} />
       ))}
     </section>
@@ -47,7 +24,7 @@ export default function Projects() {
 
 function Project({ name, shortDescription, imageSrc, tools, links }: Project) {
   return (
-    <article className="grid gap-4 rounded-xl bg-white/10 p-4 pb-6">
+    <article className="flex flex-col gap-4 rounded-xl bg-white/10 p-4 pb-6">
       <div className="relative h-[220px] overflow-hidden rounded-lg lg:h-[280px]">
         <Image
           src={imageSrc}
@@ -63,18 +40,21 @@ function Project({ name, shortDescription, imageSrc, tools, links }: Project) {
         </p>
         <h3 className="text-xl font-semibold">{name}</h3>
       </header>
-      <div className="grid gap-6">
+      <div className="grid flex-1 grid-rows-[1fr_auto] items-start gap-6">
         <div className="flex flex-wrap gap-2 lg:mb-6">
           {tools.map((tool) => (
             <Tool key={tool} name={tool} />
           ))}
         </div>
         <div className="flex gap-2 lg:gap-3">
-          {Object.entries(links).map(([name, value]) => (
-            <Button key={name} href={value}>
-              {name}
-            </Button>
-          ))}
+          {Object.entries(links).map(([name, value]) => {
+            if (!value) return null
+            return (
+              <Button key={name} href={value}>
+                {name}
+              </Button>
+            )
+          })}
         </div>
       </div>
     </article>
@@ -98,6 +78,7 @@ function Button({ href, children }: { href: string; children: string }) {
     <Link
       href={href}
       passHref={true}
+      target="_blank"
       className={cn(
         'flex items-center justify-between rounded-full p-1 px-3 text-xs font-semibold capitalize text-black transition-colors lg:p-2 lg:px-4',
         color,

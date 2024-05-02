@@ -1,43 +1,19 @@
-import type { FC, SVGProps } from 'react'
-import logo from '@/assets/logo-crisklp.svg?url'
-import GithubLogo from '@/assets/github.svg'
-import LinkedInLogo from '@/assets/linkedin.svg'
-import MailLogo from '@/assets/mail.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import logo from '@/assets/logo-crisklp.svg?url'
+import contactData, { type FooterButton } from '@/data/contact'
 import SectionHeader from './section-header'
-
-const data: FooterButton[] = [
-  {
-    name: 'Github',
-    href: 'https://github.com/ChrisKlp',
-    Icon: GithubLogo,
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/krzysztof-klepadło',
-    Icon: LinkedInLogo,
-  },
-  {
-    name: 'Email',
-    href: 'mailto:klepadlo.krzysztof@gmail.com',
-    Icon: MailLogo,
-  },
-]
-
-type FooterButton = {
-  name: string
-  href: string
-  Icon: FC<SVGProps<SVGElement>>
-}
 
 export default function Footer() {
   return (
     <footer id="contact-section" className="mt-4">
       <div className="c-container grid justify-items-center">
-        <SectionHeader title="Contact" description="You can find me here:" />
+        <SectionHeader
+          title={contactData.title}
+          description={contactData.description}
+        />
         <div className="mb-12 mt-2 grid w-full max-w-[700px] grid-cols-3 gap-6 md:mb-20 md:mt-4">
-          {data.map(({ name, href, Icon }) => (
+          {contactData.links.map(({ name, href, Icon }) => (
             <FooterButton key={name} name={name} href={href} Icon={Icon} />
           ))}
         </div>

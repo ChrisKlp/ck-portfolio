@@ -1,9 +1,8 @@
-import logo from '@/assets/logo-crisklp.svg?url'
-import GithubLogo from '@/assets/github.svg'
-import LinkedInLogo from '@/assets/linkedin.svg'
-import MailLogo from '@/assets/mail.svg'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
+import { cn } from '@/lib/utils'
+import logo from '@/assets/logo-crisklp.svg?url'
+import contactData from '@/data/contact'
 
 export default function Header() {
   return (
@@ -17,29 +16,17 @@ export default function Header() {
           className="h-auto w-14 min-w-10"
         />
       </Link>
-      <Link
-        href="https://github.com/ChrisKlp"
-        passHref={true}
-        target="_blank"
-        className="headerLink hidden md:block"
-      >
-        <GithubLogo className="h-auto w-7" />
-      </Link>
-      <Link
-        href="https://www.linkedin.com/in/krzysztof-klepadło"
-        passHref={true}
-        target="_blank"
-        className="headerLink hidden md:block"
-      >
-        <LinkedInLogo className="h-auto w-7" />
-      </Link>
-      <Link
-        href="mailto:klepadlo.krzysztof@gmail.com"
-        passHref={true}
-        className="headerLink"
-      >
-        <MailLogo className="h-auto w-7" />
-      </Link>
+      {contactData.links.map((item, i, arr) => (
+        <Link
+          key={item.name}
+          href={item.href}
+          passHref={true}
+          target="_blank"
+          className={cn('headerLink', i < arr.length - 1 && 'hidden md:block')}
+        >
+          <item.Icon className="h-auto w-7" />
+        </Link>
+      ))}
     </header>
   )
 }

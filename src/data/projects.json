@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Product feedback app",
+    "shortDescription": "fullstack",
+    "imageSrc": "/assets/feedback-app.jpg",
+    "tools": ["Next.js", "Tailwind", "DrizzleORM", "PostgreSQL", "Clerk"],
+    "links": {
+      "code": "https://github.com/ChrisKlp/product-feedback-app",
+      "live": "https://product-feedback-app-topaz.vercel.app/"
+    }
+  },
+  {
+    "name": "BeFit - Diet and fitness tracker",
+    "shortDescription": "frontend/backend",
+    "imageSrc": "/assets/be-fit.jpg",
+    "tools": [
+      "React",
+      "Vite",
+      "ChakraUI",
+      "Redux",
+      "Node.js",
+      "Express",
+      "JWT",
+      "MongoDB"
+    ],
+    "links": {
+      "frontend": "https://github.com/ChrisKlp/beFit-frontend",
+      "backend": "https://github.com/ChrisKlp/beFit-backend",
+      "live": "https://be-fit-frontend.vercel.app/"
+    }
+  },
+  {
+    "name": "Edu Games - Quizzes for kids",
+    "shortDescription": "fullstack",
+    "imageSrc": "/assets/edu-games.jpg",
+    "tools": [
+      "Next.js",
+      "Tailwind",
+      "Prisma",
+      "MySQL",
+      "Next Auth",
+      "Zustand",
+      "Framer Motion"
+    ],
+    "links": {
+      "code": "https://edu-games-chrisklp.vercel.app/",
+      "live": "https://edu-games-chrisklp.vercel.app/"
+    }
+  },
+  {
+    "name": "Audiophile e-commerce template",
+    "shortDescription": "frontend",
+    "imageSrc": "/assets/audiophile-e-commerce.jpg",
+    "tools": [
+      "React",
+      "Vite",
+      "Tailwind",
+      "Zustand",
+      "React Router",
+      "React Hook Form"
+    ],
+    "links": {
+      "code": "https://github.com/ChrisKlp/audiophile-webstore",
+      "live": "https://audiophile-webstore.vercel.app/"
+    }
+  },
+  {
+    "name": "Kanban board app",
+    "shortDescription": "frontend",
+    "imageSrc": "/assets/kanban-board.jpg",
+    "tools": ["React", "Styled Components", "Zustand", "React Beautiful DnD"],
+    "links": {
+      "code": "https://github.com/ChrisKlp/kanban-board",
+      "live": "https://kanban-board-ivory.vercel.app/"
+    }
+  },
+  {
+    "name": "Memory Game",
+    "shortDescription": "frontend",
+    "imageSrc": "/assets/memory-game.jpg",
+    "tools": ["React", "Stitches", "Zustand", "Framer Motion", "Cypress"],
+    "links": {
+      "code": "https://github.com/ChrisKlp/memory-game",
+      "live": "https://memory-game-crisklp.vercel.app/"
+    }
+  }
+]
