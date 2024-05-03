@@ -14,17 +14,20 @@ type Project = {
 
 export default function Projects() {
   return (
-    <section className="c-container grid max-w-[960px] gap-8 py-8 md:grid-cols-2 lg:gap-16">
-      {data.map((p, i) => (
-        <Project key={`${p.name}-${i}`} {...p} />
-      ))}
-    </section>
+    <div className="relative">
+      <div className="bg-projects-gradient absolute z-[-1] h-full w-full" />
+      <section className="c-container grid max-w-[960px] gap-8 py-8 md:grid-cols-2 lg:gap-16">
+        {data.map((p, i) => (
+          <Project key={`${p.name}-${i}`} {...p} />
+        ))}
+      </section>
+    </div>
   )
 }
 
 function Project({ name, shortDescription, imageSrc, tools, links }: Project) {
   return (
-    <article className="flex flex-col gap-4 rounded-xl bg-white/10 p-4 pb-6">
+    <article className="flex flex-col gap-4 rounded-xl bg-white/5 p-4 pb-6">
       <div className="relative h-[220px] overflow-hidden rounded-lg lg:h-[280px]">
         <Image
           src={imageSrc}

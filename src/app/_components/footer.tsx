@@ -6,28 +6,32 @@ import SectionHeader from './section-header'
 
 export default function Footer() {
   return (
-    <footer id="contact-section" className="mt-4">
-      <div className="c-container grid justify-items-center">
-        <SectionHeader
-          title={contactData.title}
-          description={contactData.description}
-        />
-        <div className="mb-12 mt-2 grid w-full max-w-[700px] grid-cols-3 gap-6 md:mb-20 md:mt-4">
-          {contactData.links.map(({ name, href, Icon }) => (
-            <FooterButton key={name} name={name} href={href} Icon={Icon} />
-          ))}
+    <div className="relative">
+      <div className="bg-footer-gradient absolute bottom-0 z-[-1] h-[1200px] w-full opacity-75" />
+      <div className="bg-grid absolute bottom-0 z-[-1] h-[1200px] w-full opacity-75" />
+      <footer id="contact-section" className="mt-4">
+        <div className="c-container grid justify-items-center">
+          <SectionHeader
+            title={contactData.title}
+            description={contactData.description}
+          />
+          <div className="mb-12 mt-2 grid w-full max-w-[700px] grid-cols-3 gap-6 md:mb-20 md:mt-4">
+            {contactData.links.map(({ name, href, Icon }) => (
+              <FooterButton key={name} name={name} href={href} Icon={Icon} />
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="h-20">
-        <div className="h-[1px] w-full bg-white opacity-10" />
-        <div className="flex h-full items-center justify-center gap-2">
-          <Image src={logo as string} alt="logo" width={18} height={18} />
-          <span className="text-sm opacity-40">
-            {`Copyright ${new Date().getFullYear()} © Chris Klepadlo`}
-          </span>
+        <div className="h-20">
+          <div className="h-[1px] w-full bg-white opacity-10" />
+          <div className="flex h-full items-center justify-center gap-2">
+            <Image src={logo as string} alt="logo" width={18} height={18} />
+            <span className="text-sm opacity-40">
+              {`Copyright ${new Date().getFullYear()} © Chris Klepadlo`}
+            </span>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   )
 }
 

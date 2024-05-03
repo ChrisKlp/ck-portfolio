@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --gradient-first-color: rgba(156, 100, 230, 0.2);
+  --gradient-second-color: rgba(92, 108, 255, 0.3);
+}
+
 * {
   @apply scroll-smooth subpixel-antialiased;
 }
@@ -20,5 +25,73 @@ body {
 
   .section-headline {
     @apply text-center font-bold uppercase tracking-[10px] text-primary;
+  }
+}
+
+.bg-hero-gradient {
+  background: radial-gradient(
+      circle at 75% 30%,
+      var(--gradient-first-color),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 25% 15%,
+      var(--gradient-second-color),
+      transparent 20%
+    );
+}
+
+.bg-projects-gradient {
+  background: radial-gradient(
+      circle at center 70%,
+      var(--gradient-first-color),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at center 30%,
+      var(--gradient-second-color),
+      transparent 30%
+    );
+  opacity: 0.5;
+}
+
+.bg-footer-gradient {
+  background: radial-gradient(
+    circle,
+    var(--gradient-second-color),
+    transparent 500px
+  );
+  opacity: 0.5;
+}
+
+.bg-grid {
+  background: linear-gradient(
+      to bottom,
+      transparent 59px,
+      rgba(255, 255, 255, 0.1) 60px
+    ),
+    linear-gradient(to right, transparent 59px, rgba(255, 255, 255, 0.1) 60px);
+  background-size: 60px 60px;
+  background-repeat: repeat;
+  mask-image: radial-gradient(circle at center 30%, black 20%, transparent 50%);
+  -webkit-mask-image: radial-gradient(
+    circle at center 30%,
+    black 20%,
+    transparent 50%
+  );
+}
+
+@media screen and (min-width: 1024px) {
+  .bg-hero-gradient {
+    background: radial-gradient(
+        circle at 65% 35%,
+        var(--gradient-first-color),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 35% 15%,
+        var(--gradient-second-color),
+        transparent 30%
+      );
   }
 }
