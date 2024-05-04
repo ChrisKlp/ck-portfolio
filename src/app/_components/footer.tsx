@@ -41,10 +41,11 @@ function FooterButton({ href, name, Icon }: FooterButton) {
       href={href}
       passHref={true}
       target="_blank"
-      className="group grid place-items-center gap-2 rounded-lg bg-white/5 p-5 transition-colors hover:bg-primary"
+      className="group relative grid place-items-center gap-2 overflow-hidden rounded-lg bg-white/5 p-5"
     >
-      <Icon className="h-8 w-8 transition-colors group-hover:fill-black" />
-      <span className="text-xs text-white  transition-colors group-hover:text-black">
+      <div className="absolute inset-0 z-[-1] translate-y-[100%] bg-primary transition-transform duration-300 group-hover:translate-y-0" />
+      <Icon className="h-8 w-8 transition-colors duration-300 group-hover:fill-black" />
+      <span className="text-xs text-white  transition-colors duration-300 group-hover:text-black">
         {name}
       </span>
     </Link>
