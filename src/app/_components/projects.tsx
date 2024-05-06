@@ -81,7 +81,7 @@ function Button({ href, children }: { href: string; children: string }) {
   const color =
     children === 'live'
       ? 'bg-primary hover:bg-primary-highlighted'
-      : 'bg-slate-200 hover:bg-slate-100'
+      : 'bg-transparent hover:bg-primary text-primary hover:text-black ring-1 ring-primary'
   return (
     <Link
       href={href}

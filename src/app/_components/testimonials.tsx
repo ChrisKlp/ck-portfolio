@@ -17,9 +17,13 @@ const SPRING_OPTIONS = {
 export default function Testimonials() {
   return (
     <section className="c-container overflow-hidden py-12 lg:pb-20 xl:pb-32">
-      <div className="hidden grid-cols-2 grid-rows-2 md:grid md:gap-4">
-        {data.map((t) => (
-          <Testimonial key={t.content} {...t} />
+      <div className="hidden grid-flow-col grid-cols-2 grid-rows-2 md:grid md:gap-4">
+        {data.map((t, i) => (
+          <Testimonial
+            key={t.content}
+            {...t}
+            className={i > 1 ? 'translate-y-10' : ''}
+          />
         ))}
       </div>
       <MobileTestimonialsWrapper className="md:hidden" />
