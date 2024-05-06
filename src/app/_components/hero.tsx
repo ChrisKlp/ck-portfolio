@@ -12,12 +12,12 @@ export default function Hero() {
           <span>{data.header[0][0]}</span>
           <span>{data.header[0][1]}</span>
         </h1>
-        <p className="mt-4 max-w-[480px] text-center text-sm opacity-60 md:max-w-[550px] md:text-base lg:max-w-[620px] lg:text-lg">
+        <p className="mb-10 mt-4 max-w-[480px] text-center text-sm opacity-60 md:max-w-[550px] md:text-base lg:max-w-[620px] lg:text-lg">
           {data.description}
         </p>
         <Link
           href="#contact-section"
-          className="mt-10 rounded-full bg-primary p-3 px-8 font-bold text-black transition-colors hover:bg-primary-highlighted lg:p-4 lg:px-10"
+          className="rounded-full bg-primary p-3 px-8 font-bold text-black transition-colors hover:bg-primary-highlighted lg:p-4 lg:px-10"
         >
           Contact me
         </Link>

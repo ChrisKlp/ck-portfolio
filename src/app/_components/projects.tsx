@@ -9,7 +9,7 @@ type Project = {
   shortDescription: string
   imageSrc: string
   tools: string[]
-  links: Record<string, string | undefined>
+  links: Record<string, string | undefined> & { live: string }
 }
 
 export default function Projects() {
@@ -28,15 +28,20 @@ export default function Projects() {
 function Project({ name, shortDescription, imageSrc, tools, links }: Project) {
   return (
     <article className="flex flex-col gap-4 rounded-xl bg-white/5 p-4 pb-6">
-      <div className="relative h-[220px] overflow-hidden rounded-lg lg:h-[280px]">
+      <Link
+        href={links.live}
+        passHref={true}
+        target="_blank"
+        className="relative h-[220px] overflow-hidden rounded-lg lg:h-[280px]"
+      >
         <Image
           src={imageSrc}
           alt={name}
           fill
           sizes="100%"
-          className="object-cover"
+          className="object-cover transition-transform duration-300 hover:scale-[1.08]"
         />
-      </div>
+      </Link>
       <header>
         <p className="text-sm uppercase opacity-60 lg:my-1">
           {shortDescription}
@@ -75,8 +80,8 @@ function Tool({ name }: { name: string }) {
 function Button({ href, children }: { href: string; children: string }) {
   const color =
     children === 'live'
-      ? 'bg-secondary hover:bg-secondary-dark text-white'
-      : 'bg-primary hover:bg-primary-highlighted'
+      ? 'bg-primary hover:bg-primary-highlighted'
+      : 'bg-slate-200 hover:bg-slate-100'
   return (
     <Link
       href={href}
