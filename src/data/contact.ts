@@ -33,4 +33,8 @@ const contactData = {
   links: linksData,
 }
 
+export function getGithubLink() {
+  return linksData.find((l) => l.name === 'Github')
+}
+
 export default contactData

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import LinkIcon from '@/assets/link.svg'
 import { cn } from '@/lib/utils'
 import data from '@/data/projects.json'
+import { getGithubLink } from '@/data/contact'
 
 type Project = {
   name: string
@@ -13,6 +14,7 @@ type Project = {
 }
 
 export default function Projects() {
+  const githubLink = getGithubLink()
   return (
     <div className="relative">
       <div className="bg-projects-gradient absolute z-[-1] h-full w-full" />
@@ -21,6 +23,26 @@ export default function Projects() {
           <Project key={`${p.name}-${i}`} {...p} />
         ))}
       </section>
+      {githubLink && (
+        <Link
+          href={githubLink.href}
+          passHref={true}
+          target="_blank"
+          className={
+            'group relative mx-auto my-6 mb-24 grid h-14 w-64 place-items-center rounded-full border-2 border-primary'
+          }
+        >
+          <span className="transition-transform duration-200 ease-in-out group-hover:-translate-x-5">
+            Check my github
+          </span>
+          <githubLink.Icon
+            className="absolute right-8 scale-0 fill-primary transition-transform duration-200 ease-in-out group-hover:scale-100"
+            width={20}
+            height={20}
+          />
+          <span className="absolute inset-0 -z-[1] rounded-full opacity-0 shadow-primary transition-opacity duration-300 ease-in-out group-hover:opacity-100" />
+        </Link>
+      )}
     </div>
   )
 }

@@ -25,6 +25,9 @@ const config: Config = {
           dark: '#D03F40',
         },
       },
+      boxShadow: {
+        primary: '0 5px 40px -7px rgb(255, 194, 92)',
+      },
     },
   },
   plugins: [],
