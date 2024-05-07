@@ -1,4 +1,4 @@
-This is my portfolio website.
+This is my portfolio webpage.
 
 ### Tech Stack
 - [Next.js](https://nextjs.org/)
