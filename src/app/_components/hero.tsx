@@ -10,9 +10,7 @@ export default function Hero() {
           {data.title}
         </p>
         <h1 className="sr-only">{data.header[0].join(' ')}</h1>
-        <div className="grid text-center font-bold leading-[1] [font-size:_clamp(3.5rem,8vw,7rem)]">
-          <HeroVanishText />
-        </div>
+        <HeroVanishText />
         <p className="mb-10 mt-4 max-w-[480px] text-center text-sm opacity-60 md:max-w-[550px] md:text-base lg:max-w-[620px] lg:text-lg">
           {data.description}
         </p>

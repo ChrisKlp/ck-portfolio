@@ -51,7 +51,7 @@ function AnimatedGrid({ className, ...rest }: { className?: string }) {
                   delay: delay,
                 },
               }}
-              className="h-full w-full bg-white/5"
+              className="h-full w-full bg-white/10"
             />
           </div>
         )
