@@ -9,7 +9,7 @@ export default function SectionHeader({ title, description }: Props) {
   return (
     <header className="mb-8 grid justify-items-center gap-6 md:mb-12">
       <h2 className="section-headline">{title}</h2>
-      <p className="max-w-[660px] text-center opacity-70">{description}</p>
+      <p className="max-w-[700px] text-center opacity-70">{description}</p>
     </header>
   )
 }

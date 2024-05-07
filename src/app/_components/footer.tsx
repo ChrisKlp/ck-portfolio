@@ -7,7 +7,7 @@ import SectionHeader from './section-header'
 export default function Footer() {
   return (
     <div className="relative">
-      <div className="bg-footer-gradient absolute bottom-0 z-[-1] h-[1200px] w-full opacity-75" />
+      <div className="bg-footer-gradient absolute bottom-0 z-[-1] h-[1200px] w-full opacity-75 md:bottom-[200px]" />
       <div className="bg-grid absolute bottom-0 z-[-1] h-[1200px] w-full opacity-75" />
       <footer id="contact-section" className="mt-4">
         <div className="c-container grid justify-items-center">
