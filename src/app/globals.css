@@ -82,7 +82,11 @@ body {
 }
 
 .circle-mask {
-  mask-image: radial-gradient(farthest-side at center, black 50%, transparent);
+  mask-image: radial-gradient(
+    closest-side circle at center 40%,
+    black 20%,
+    transparent
+  );
 }
 
 @media screen and (min-width: 1024px) {
@@ -97,5 +101,13 @@ body {
         var(--gradient-second-color),
         transparent 30%
       );
+  }
+
+  .circle-mask {
+    mask-image: radial-gradient(
+      farthest-side at center,
+      black 50%,
+      transparent
+    );
   }
 }

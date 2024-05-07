@@ -8,10 +8,9 @@ import GridBackground from './grid-background'
 
 export default function Header() {
   return (
-    <header className="relative">
+    <header className="relative overflow-x-clip">
       <div className="bg-hero-gradient absolute z-[-1] h-[1500px] w-full" />
       <GridBackground />
-      {/* <div className="bg-grid absolute z-[-1] h-[1500px] w-full opacity-75" /> */}
       <nav className="c-container grid max-w-[1440px] grid-cols-[1fr_auto] items-center gap-5 py-6 md:grid-cols-[1fr_repeat(3,auto)] lg:gap-8">
         <div className="grid justify-items-start">
           <StickyWrapper>
