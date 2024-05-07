@@ -19,7 +19,7 @@ export default function HeroVanishText() {
   }, [])
 
   return (
-    <div className="grid text-center font-bold leading-[1] [font-size:_clamp(3.5rem,8vw,6.5rem)]">
+    <div className="grid text-center font-bold leading-[1] [font-size:_clamp(3.5rem,8vw,5.5rem)]">
       <AnimatePresence mode="wait">
         <VanishText
           key={`${data.header[index][0]}-${index}`}

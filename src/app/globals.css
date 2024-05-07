@@ -89,6 +89,12 @@ body {
   );
 }
 
+@media screen and (min-width: 768px) {
+  .circle-mask {
+    mask-image: radial-gradient(closest-side at center, black 10%, transparent);
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .bg-hero-gradient {
     background: radial-gradient(
@@ -104,10 +110,6 @@ body {
   }
 
   .circle-mask {
-    mask-image: radial-gradient(
-      farthest-side at center,
-      black 50%,
-      transparent
-    );
+    mask-image: radial-gradient(closest-side at center, black 50%, transparent);
   }
 }

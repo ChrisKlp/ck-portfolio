@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className="relative overflow-x-clip">
       <div className="bg-hero-gradient absolute z-[-1] h-[1500px] w-full" />
-      <GridBackground />
+      <GridBackground className="opacity-100 lg:opacity-75" />
       <nav className="c-container grid max-w-[1440px] grid-cols-[1fr_auto] items-center gap-5 py-6 md:grid-cols-[1fr_repeat(3,auto)] lg:gap-8">
         <div className="grid justify-items-start">
           <StickyWrapper>
