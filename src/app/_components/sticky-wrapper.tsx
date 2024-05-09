@@ -20,7 +20,6 @@ export default function StickyWrapper({ children, className }: Props) {
     const x = clientX - (rect.left + rect.width / 2)
     const y = clientY - (rect.top + rect.height / 2)
     setMousePosition({ x, y })
-    console.log({ x, y })
   }
 
   return (
